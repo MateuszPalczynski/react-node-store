@@ -29,4 +29,37 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Aktualizuj produkt
+router.put('/:id', async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id).populate('category');
+    if (!product) {
+      return res.status(404).json({ message: 'Produkt nie znaleziony' });
+    }
+
+    product.name = req.body.name || product.name;
+    product.price = req.body.price || product.price;
+    product.category = req.body.categoryId || product.category;
+
+    const updatedProduct = await product.save();
+    res.json(updatedProduct);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+// Usuń produkt
+router.delete('/:id', async (req, res) => {
+  try {
+    const product = await Product.findByIdAndDelete(req.params.id);
+    if (!product) {
+      return res.status(404).json({ message: 'Produkt nie znaleziony' });
+    }
+    res.json({ message: 'Produkt został usunięty' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+
 module.exports = router;
