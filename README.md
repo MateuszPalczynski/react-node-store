@@ -1,40 +1,41 @@
-# Sklep – Aplikacja Webowa
+# Simple Store – React & Node.js  
 
-## Opis projektu
-Jest to prosta aplikacja webowa do zarządzania produktami i kategoriami w sklepie. Pozwala na:
-- Dodawanie i usuwanie kategorii
-- Dodawanie i usuwanie produktów
-- Przeglądanie listy kategorii i produktów
+It is a simple web application for managing products and categories in the store. It allows you to:
+- **Adding** and deleting categories
+- **Adding** and deleting products
+- **Viewing** the list of categories and products
 
-## Technologie
+## Technologies  
+
 - **Frontend:** React.js
-- **Backend:** Node.js + Express
-- **Baza danych:** MongoDB
-- **Komunikacja:** Axios
+- **Backend:** Node.js + Express  
+- **Databases:** MongoDB
+- **Communication** Axios
 
-## Instalacja
-Aby uruchomić projekt lokalnie, wykonaj poniższe kroki:
+## Installation
 
-### 1. Uruchom backend
-```bash
+### 1. Run the backend  
+
+```sh  
 cd backend
 npm install
 npm start
 ```
 
-### 2. Uruchom frontend
-```bash
+### 1. Run the frontend 
+
+```sh  
 cd frontend
 npm install
 npm start
 ```
-
-Aplikacja powinna być dostępna pod adresem: `http://localhost:3000/`
+The application should be available at: http://localhost:3000/
 
 ## API Endpoints
-- `GET /api/products` – Pobiera listę produktów
-- `POST /api/products` – Dodaje nowy produkt
-- `DELETE /api/products/:id` – Usuwa produkt
-- `GET /api/categories` – Pobiera listę kategorii
-- `POST /api/categories` – Dodaje nową kategorię
-- `DELETE /api/categories/:id` – Usuwa kategorię
+
+- **GET /api/products:** Retrieves a list of products
+- **POST /api/products:** Adds a new product  
+- **DELETE /api/products/:id:** Deletes a product
+- **GET /api/categories:** Retrieves list of categories
+- **POST /api/categories:** Adds a new category  
+- **DELETE /api/categories/:id:** Deletes a category
